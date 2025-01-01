@@ -1,2 +1,14 @@
 # Unit_1_Guess_A_Number_Project
- This is the first project of the Data Analyst Techdegree from Team Treehouse
+
+ **Description:**
+
+ **This project is a number guessing game written in Python**
+
+**Features:**
+
+*
+*
+
+**Usage:**
+
+**License**
