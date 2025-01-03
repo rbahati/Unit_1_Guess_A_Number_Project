@@ -30,22 +30,24 @@ def start_game():
         # Prompt user for input
         try:
             user_guess = int(input("Please enter a number between 1 and 10: "))
-            if user_guess == 0 or user_guess > 10:
+            if user_guess <= 0 or user_guess > 10:
                 raise ValueError
         except ValueError:
             print("Please enter a number between 1 and 10 inclusive!")
 
         else:
             num_of_tries += 1
+# When the player guess is lower
             if user_guess < random_number:
                 print(f"The number {user_guess} is lower than the secret number! Please try again...")
-
+# When the player guess is higher
             elif user_guess > random_number:
                 print(f"The number {user_guess} is higher than the secret number! Please try again...")
-
+# When the player gets the right guess
             else:
                 print(f"Congratulations!!! You guessed the right number in {num_of_tries} tries.")
                 num_of_tries_list.append(num_of_tries)
+
 
         while user_guess == random_number:
                 try_again = input("Do you wanna try again? (Y/N) : ")
@@ -58,7 +60,7 @@ def start_game():
                 elif try_again == "":
                     print("Please either type 'yes' or 'no'")
                     continue
-
+# When the player decides to quit the game
                 else:
                     print("Thanks for playing!")
                     print(f"The mean of the saved attempts list is {statistics.mean(num_of_tries_list)}")
